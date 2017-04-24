@@ -1,0 +1,85 @@
+
+
+{% extends "parentTemp.html" %}
+{% block bigtitle %}Restaurant Page{% endblock %}
+
+{% block pageTop %}
+<h1 id="welcome">Boston Foodie!</h1>
+    <h2>Explore the restaurants and satisfy your taste</h2>
+    <h2>See recommended dishes for restaurants </h2>
+{% endblock %}
+
+{% block wholeContent %}
+
+<div id="pageIntro">
+    <span id = "mainName">{{resName}}</span>
+    <br><p style = "color: crimson; font-size:20px"><i>Welcome to the info page of {{resName}}</i>
+    <br><p><b><i>Latest Image</i></b></p>
+    <div id = "img">
+        {{image}}
+    </div>
+    <br><br><b>Location: </b>{{loca}}  <b>Cuisine: </b>{{cuisine}} <b>Type: </b>{{type}}
+<br>
+
+</div>
+
+<div id = "display">
+<p style = "color:salmon"><b>{{message}}</b>
+<br>
+<fieldset  id= "cuisineList">
+    <legend><b>Top Dishes</b></legend>
+
+    {{dishes}}
+</fieldset>
+<br>
+</div>
+
+<br>
+
+
+<!-- Buttons directed to other page -->
+<div id="navi">
+    <ul>
+        <!-- <li><a href ="res-info-update.cgi?resName={{resName}}"><span id = "mainName">Upload or Update {{resName}}</span> -->
+        <li>{{link}}
+        <li><a href="homeLogin.cgi"><span id = "mainName">Back to Home Page</span>
+        <li><a href="javascript:history.go(-1)"><span id = "mainName">Back to Previous Page</span>
+    </ul>
+<br>
+</div>
+
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.2/jquery.min.js" ></script>
+<script>
+// $(".likeB").click(function (event) {
+//                       currentLike = parseInt($(event.target).attr('like'));
+//                       alert(currentLike)
+//                       dishID = $(event.target).attr('value');
+//                       currentDish = document.getElementById(dishID);
+//                       currentDish.innerHTML = parseInt(currentLike) + 1;
+//                       // alert(currentLike);
+//                       // $.ajax({
+//                       //     type: "POST",
+//                       //     url: "lookup.cgi",
+//                       //     data: {"dishID": dishID,
+//                       //            "dishLike": currentLike},
+//                       //     success: function(){
+//                       //       currentDish.innerHTML = currentLike + 1;
+//                       //       currentLike += 1;
+//                       //       // alert(currentLike);
+//                       //     }
+//                       //   })
+//                     });
+
+
+// $(".likeB").click(function(){
+//     var dishID = $(this).attr('value');
+//     var numLike = parseInt($(this).attr('like'));
+//     currentDish = document.getElementById(dishID);
+//     currentDish.innerHTML = parseInt(numLike) + 1;
+
+// });
+
+
+</script>
+
+{% endblock %}
